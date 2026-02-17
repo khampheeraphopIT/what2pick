@@ -1,6 +1,23 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "what2pick – Can't Decide? We'll Choose for You",
+  description:
+    "Stop overthinking. Instant decisions for food, yes/no questions, numbers, names, colors and more. Free decision-making tools.",
+  metadataBase: new URL("https://what2pick.com"),
+  openGraph: {
+    title: "Can't Decide? We'll Choose for You",
+    description: "Food, answers, numbers, names and more — stop overthinking.",
+    url: "https://what2pick.com",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Can't decide? We'll choose for you",
+    description: "Food, answers, numbers, names and more — stop overthinking.",
+  },
+};
 
 interface IntentCard {
   emoji: string;
@@ -57,7 +74,7 @@ const intents: IntentCard[] = [
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col items-center w-full">
+    <div className="flex flex-col items-center w-full min-h-screen">
       {/* Hero Section */}
       <div className="flex flex-col items-center gap-8 text-center max-w-4xl w-full px-4 py-12 sm:py-20">
         <div className="space-y-4">
@@ -76,7 +93,7 @@ export default function HomePage() {
           href="/random"
           prefetch={true}
           aria-label="Make a random decision for me"
-          className="group relative px-12 py-6 rounded-3xl bg-gradient-to-r from-violet-500 to-purple-500 hover:from-violet-400 hover:to-purple-400 active:scale-95 text-white font-bold text-xl sm:text-2xl transition-all duration-200 shadow-2xl shadow-violet-500/30 hover:shadow-violet-400/40 cursor-pointer min-h-[80px] flex items-center justify-center"
+          className="group relative px-12 py-6 rounded-3xl bg-gradient-to-r from-violet-500 to-purple-500 hover:from-violet-400 hover:to-purple-400 active:scale-95 text-white font-bold text-xl sm:text-2xl transition-all duration-200 shadow-2xl shadow-violet-500/30 hover:shadow-violet-400/40 cursor-pointer min-h-[80px] flex items-center justify-center no-underline"
         >
           <span className="flex items-center gap-3">
             <span className="text-3xl group-hover:rotate-180 transition-transform duration-500">
@@ -85,10 +102,6 @@ export default function HomePage() {
             <span>Surprise me</span>
           </span>
         </Link>
-
-        <p className="text-sm text-slate-500">
-          or choose what you need help with
-        </p>
       </div>
 
       {/* Intent Cards */}
@@ -100,35 +113,34 @@ export default function HomePage() {
               href={intent.href}
               prefetch={true}
               aria-label={intent.title}
-              className="group relative overflow-hidden rounded-3xl transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-95 min-h-[180px] flex flex-col items-start justify-between p-8 border border-white/10 hover:border-white/20"
+              className="group relative overflow-hidden rounded-3xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl active:scale-95 min-h-[180px] flex flex-col items-start justify-between p-8 border border-white/10 hover:border-white/20 no-underline"
             >
-              {/* Gradient Background */}
               <div
                 className={`absolute inset-0 bg-gradient-to-br ${intent.color} opacity-90 group-hover:opacity-100 transition-opacity duration-300`}
               />
 
-              {/* Content */}
-              <div className="relative z-10 space-y-3 w-full">
-                <span className="text-6xl group-hover:scale-110 transition-transform duration-300 inline-block">
+              <div className="relative z-10 space-y-3 w-full text-left">
+                <span className="text-6xl group-hover:scale-110 transition-transform duration-300 inline-block mb-2">
                   {intent.emoji}
                 </span>
                 <div>
-                  <h2 className="text-white font-bold text-2xl mb-1">
+                  <h2 className="text-white font-bold text-2xl mb-1 mt-0 leading-none">
                     {intent.title}
                   </h2>
-                  <p className="text-white/80 text-base">{intent.subtitle}</p>
+                  <p className="text-white/80 text-base m-0 p-0">
+                    {intent.subtitle}
+                  </p>
                 </div>
               </div>
 
-              {/* Arrow indicator */}
-              <div className="relative z-10 text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all duration-200">
+              <div className="relative z-10 text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all duration-200 self-end">
                 <svg
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="2"
+                  strokeWidth="2.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
@@ -137,7 +149,6 @@ export default function HomePage() {
                 </svg>
               </div>
 
-              {/* Shine Effect */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300 bg-gradient-to-tr from-transparent via-white to-transparent transform -skew-x-12" />
             </Link>
           ))}
@@ -146,9 +157,11 @@ export default function HomePage() {
 
       {/* SEO Content */}
       <div className="seo-content max-w-3xl w-full px-4 pb-16 border-t border-white/10 pt-16 mt-8">
-        <section className="seo-section">
-          <h2>Stop overthinking decisions</h2>
-          <p>
+        <section className="seo-section mb-12 text-left">
+          <h2 className="text-2xl font-bold text-white mb-4">
+            Stop overthinking decisions
+          </h2>
+          <p className="text-slate-400 leading-relaxed">
             what2pick helps you make quick decisions when you&apos;re stuck.
             Whether you can&apos;t decide what to eat, need a yes or no answer,
             want a random number, or need creative inspiration, our tools
@@ -156,54 +169,50 @@ export default function HomePage() {
           </p>
         </section>
 
-        <section className="seo-section">
-          <h2>Popular decision tools</h2>
-          <ul>
-            <li className="mb-2">
-              <a
+        <section className="seo-section text-left">
+          <h2 className="text-2xl font-bold text-white mb-4">
+            Popular decision tools
+          </h2>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 list-none p-0 m-0">
+            <li>
+              <Link
                 href="/what-to-eat"
-                className="text-brand-light hover:underline font-medium"
+                className="text-indigo-400 hover:text-indigo-300 font-medium no-underline flex items-center gap-2"
               >
-                What to eat
-              </a>{" "}
-              – Can&apos;t decide on food? Get instant meal ideas from 85+
-              options
+                <span>🍽️</span> <span>What to eat today</span>
+              </Link>
             </li>
-            <li className="mb-2">
-              <a
+            <li>
+              <Link
                 href="/yes-or-no"
-                className="text-brand-light hover:underline font-medium"
+                className="text-indigo-400 hover:text-indigo-300 font-medium no-underline flex items-center gap-2"
               >
-                Yes or no
-              </a>{" "}
-              – Need a quick answer? Get an instant yes or no decision
+                <span>🤔</span> <span>Yes or no picker</span>
+              </Link>
             </li>
-            <li className="mb-2">
-              <a
+            <li>
+              <Link
                 href="/random-number"
-                className="text-brand-light hover:underline font-medium"
+                className="text-indigo-400 hover:text-indigo-300 font-medium no-underline flex items-center gap-2"
               >
-                Random number
-              </a>{" "}
-              – Pick a random number between 1-100
+                <span>🔢</span> <span>Pick a number</span>
+              </Link>
             </li>
-            <li className="mb-2">
-              <a
+            <li>
+              <Link
                 href="/random-color"
-                className="text-brand-light hover:underline font-medium"
+                className="text-indigo-400 hover:text-indigo-300 font-medium no-underline flex items-center gap-2"
               >
-                Random color
-              </a>{" "}
-              – Generate random color codes for design projects
+                <span>🎨</span> <span>Color generator</span>
+              </Link>
             </li>
-            <li className="mb-2">
-              <a
+            <li>
+              <Link
                 href="/name-generator"
-                className="text-brand-light hover:underline font-medium"
+                className="text-indigo-400 hover:text-indigo-300 font-medium no-underline flex items-center gap-2"
               >
-                Name ideas
-              </a>{" "}
-              – Get creative name suggestions instantly
+                <span>✨</span> <span>Name ideas</span>
+              </Link>
             </li>
           </ul>
         </section>

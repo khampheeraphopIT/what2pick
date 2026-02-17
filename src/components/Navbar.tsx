@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const tools = [
-  { href: "/", label: "Home", intent: false },
+  { href: "/", label: "Home" },
   { href: "/what-to-eat", label: "Decide food" },
   { href: "/yes-or-no", label: "Get an answer" },
   { href: "/random-number", label: "Pick a number" },
@@ -22,7 +22,7 @@ export default function Navbar() {
       <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
         <Link
           href="/"
-          className="text-lg font-bold tracking-tight text-white hover:text-indigo-300 transition-colors"
+          className="text-lg font-bold tracking-tight text-white hover:text-indigo-300 transition-colors no-underline"
         >
           what2pick
         </Link>
@@ -39,7 +39,7 @@ export default function Navbar() {
               <Link
                 key={tool.href}
                 href={tool.href}
-                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${
+                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 no-underline ${
                   isActive
                     ? "bg-indigo-500/20 text-indigo-300"
                     : "text-slate-400 hover:text-white hover:bg-white/[0.06]"
@@ -84,7 +84,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-white/[0.06] bg-white/[0.02] backdrop-blur-xl animate-fade-in">
+        <div className="md:hidden border-t border-white/[0.06] bg-white/[0.02] backdrop-blur-xl animate-fade-in px-4 py-2">
           {tools.map((tool) => {
             const isActive =
               tool.href === "/"
@@ -96,7 +96,7 @@ export default function Navbar() {
                 key={tool.href}
                 href={tool.href}
                 onClick={() => setMobileOpen(false)}
-                className={`block px-6 py-3 text-sm font-medium transition-colors ${
+                className={`block px-4 py-3 rounded-xl text-sm font-medium transition-colors no-underline mb-1 ${
                   isActive
                     ? "text-indigo-300 bg-indigo-500/10"
                     : "text-slate-400 hover:text-white hover:bg-white/[0.04]"
