@@ -145,7 +145,7 @@ export default function HomePage() {
       </div>
 
       {/* SEO Content */}
-      <div className="seo-content max-w-3xl w-full px-4 pb-16">
+      <div className="seo-content max-w-3xl w-full px-4 pb-16 border-t border-white/10 pt-16 mt-8">
         <section className="seo-section">
           <h2>Stop overthinking decisions</h2>
           <p>
@@ -159,50 +159,50 @@ export default function HomePage() {
         <section className="seo-section">
           <h2>Popular decision tools</h2>
           <ul>
-            <li>
-              <Link
+            <li className="mb-2">
+              <a
                 href="/what-to-eat"
-                className="hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white"
+                className="text-brand-light hover:underline font-medium"
               >
                 What to eat
-              </Link>{" "}
+              </a>{" "}
               – Can&apos;t decide on food? Get instant meal ideas from 85+
               options
             </li>
-            <li>
-              <Link
+            <li className="mb-2">
+              <a
                 href="/yes-or-no"
-                className="hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white"
+                className="text-brand-light hover:underline font-medium"
               >
                 Yes or no
-              </Link>{" "}
+              </a>{" "}
               – Need a quick answer? Get an instant yes or no decision
             </li>
-            <li>
-              <Link
+            <li className="mb-2">
+              <a
                 href="/random-number"
-                className="hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white"
+                className="text-brand-light hover:underline font-medium"
               >
                 Random number
-              </Link>{" "}
+              </a>{" "}
               – Pick a random number between 1-100
             </li>
-            <li>
-              <Link
+            <li className="mb-2">
+              <a
                 href="/random-color"
-                className="hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white"
+                className="text-brand-light hover:underline font-medium"
               >
                 Random color
-              </Link>{" "}
+              </a>{" "}
               – Generate random color codes for design projects
             </li>
-            <li>
-              <Link
+            <li className="mb-2">
+              <a
                 href="/name-generator"
-                className="hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white"
+                className="text-brand-light hover:underline font-medium"
               >
                 Name ideas
-              </Link>{" "}
+              </a>{" "}
               – Get creative name suggestions instantly
             </li>
           </ul>

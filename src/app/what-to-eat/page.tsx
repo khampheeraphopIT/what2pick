@@ -137,7 +137,7 @@ export default function WhatToEatPage() {
       </div>
 
       {/* SEO Content */}
-      <div className="seo-content max-w-3xl w-full px-4 mt-16">
+      <div className="seo-content max-w-3xl w-full px-4 mt-16 border-t border-white/10 pt-16">
         <section className="seo-section">
           <h2>How this tool works</h2>
           <p>
@@ -149,48 +149,53 @@ export default function WhatToEatPage() {
         </section>
 
         <section className="seo-section">
-          <h2>When to use it</h2>
-          <ul>
-            <li>When you&apos;re hungry but can&apos;t decide what to eat</li>
-            <li>To discover new meal ideas and food options</li>
-            <li>When planning dinner or lunch with friends</li>
-            <li>To break out of eating the same foods repeatedly</li>
-            <li>For quick meal inspiration</li>
-            <li>When you want to try something different</li>
-          </ul>
-        </section>
-
-        <section className="seo-section">
           <h2>About this tool</h2>
           <p>
             The what to eat today generator is your personal meal picker that
             helps solve the common question &quot;what should I eat?&quot; Our
             random food generator includes popular dishes like pizza, sushi,
-            tacos, curry, and many more international cuisines. Whether
-            you&apos;re cooking at home, ordering delivery, or choosing a
-            restaurant, this meal picker provides instant food ideas to help you
-            decide what to eat.
+            tacos, curry, and many more international cuisines.
           </p>
         </section>
 
         <section className="seo-section">
           <h2>Related tools</h2>
           <ul>
-            <li>
-              <a href="/yes-or-no">Yes or No Picker</a> – Make quick decisions
-              instantly
+            <li className="mb-2">
+              <a
+                href="/yes-or-no"
+                className="text-brand-light hover:underline font-medium"
+              >
+                Yes or No Picker
+              </a>{" "}
+              – Make quick decisions instantly
             </li>
-            <li>
-              <a href="/name-generator">Name Generator</a> – Generate creative
-              random names
+            <li className="mb-2">
+              <a
+                href="/name-generator"
+                className="text-brand-light hover:underline font-medium"
+              >
+                Name Generator
+              </a>{" "}
+              – Generate creative random names
             </li>
-            <li>
-              <a href="/random-number">Random Number Generator</a> – Pick a
-              random number 1-100
+            <li className="mb-2">
+              <a
+                href="/random-number"
+                className="text-brand-light hover:underline font-medium"
+              >
+                Random Number Generator
+              </a>{" "}
+              – Pick a random number 1-100
             </li>
-            <li>
-              <a href="/random-color">Random Color Generator</a> – Get random
-              hex color codes
+            <li className="mb-2">
+              <a
+                href="/random-color"
+                className="text-brand-light hover:underline font-medium"
+              >
+                Random Color Generator
+              </a>{" "}
+              – Get random hex color codes
             </li>
           </ul>
         </section>
