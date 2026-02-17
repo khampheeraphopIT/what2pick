@@ -16,6 +16,6 @@ export default function robots(): MetadataRoute.Robots {
         "/what-to-do",
       ],
     },
-    sitemap: "https://what2pick.com/sitemap.xml",
+    sitemap: "https://what2pick.vercel.app/sitemap.xml",
   };
 }

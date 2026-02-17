@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   },
   description:
     "Free online decision maker tools. Instantly pick yes or no, random food, names, numbers, colors and more.",
-  metadataBase: new URL("https://what2pick.com"),
+  metadataBase: new URL("https://what2pick.vercel.app"),
   verification: {
     google: "fuBCfx4V0GZ1vBD7nHKr8zqTOb4uisVhPpi0W0SXnis",
   },

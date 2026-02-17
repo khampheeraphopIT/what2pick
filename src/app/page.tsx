@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   title: "what2pick – Can't Decide? We'll Choose for You",
   description:
     "Stop overthinking. Instant decisions for food, yes/no questions, numbers, names, colors and more. Free decision-making tools.",
-  metadataBase: new URL("https://what2pick.com"),
+  metadataBase: new URL("https://what2pick.vercel.app"),
   openGraph: {
     title: "Can't Decide? We'll Choose for You",
     description: "Food, answers, numbers, names and more — stop overthinking.",
-    url: "https://what2pick.com",
+    url: "https://what2pick.vercel.app",
     type: "website",
   },
   twitter: {
