@@ -1,23 +1,6 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+"use client";
 
-export const metadata: Metadata = {
-  title: "what2pick – Can't Decide? We'll Choose for You",
-  description:
-    "Stop overthinking. Instant decisions for food, yes/no questions, numbers, names, colors and more. Free decision-making tools.",
-  metadataBase: new URL("https://what2pick.com"),
-  openGraph: {
-    title: "Can't Decide? We'll Choose for You",
-    description: "Food, answers, numbers, names and more — stop overthinking.",
-    url: "https://what2pick.com",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Can't decide? We'll choose for you",
-    description: "Food, answers, numbers, names and more — stop overthinking.",
-  },
-};
+import Link from "next/link";
 
 interface IntentCard {
   emoji: string;
