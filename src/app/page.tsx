@@ -160,24 +160,50 @@ export default function HomePage() {
           <h2>Popular decision tools</h2>
           <ul>
             <li>
-              <a href="/what-to-eat">What to eat</a> – Can&apos;t decide on
-              food? Get instant meal ideas from 85+ options
+              <Link
+                href="/what-to-eat"
+                className="hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white"
+              >
+                What to eat
+              </Link>{" "}
+              – Can&apos;t decide on food? Get instant meal ideas from 85+
+              options
             </li>
             <li>
-              <a href="/yes-or-no">Yes or no</a> – Need a quick answer? Get an
-              instant yes or no decision
+              <Link
+                href="/yes-or-no"
+                className="hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white"
+              >
+                Yes or no
+              </Link>{" "}
+              – Need a quick answer? Get an instant yes or no decision
             </li>
             <li>
-              <a href="/random-number">Random number</a> – Pick a random number
-              between 1-100
+              <Link
+                href="/random-number"
+                className="hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white"
+              >
+                Random number
+              </Link>{" "}
+              – Pick a random number between 1-100
             </li>
             <li>
-              <a href="/random-color">Random color</a> – Generate random color
-              codes for design projects
+              <Link
+                href="/random-color"
+                className="hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white"
+              >
+                Random color
+              </Link>{" "}
+              – Generate random color codes for design projects
             </li>
             <li>
-              <a href="/name-generator">Name ideas</a> – Get creative name
-              suggestions instantly
+              <Link
+                href="/name-generator"
+                className="hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white"
+              >
+                Name ideas
+              </Link>{" "}
+              – Get creative name suggestions instantly
             </li>
           </ul>
         </section>

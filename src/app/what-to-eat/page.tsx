@@ -2,8 +2,8 @@
 
 import { useRouter } from "next/navigation";
 import {
-  pickRandomCategory,
-  pickRandomIntent,
+  pickRandomIntentForCategory,
+  pickRandomCategoryForIntent,
   pickRandomCombination,
 } from "@/utils/decisionHelpers";
 
@@ -16,12 +16,12 @@ export default function WhatToEatPage() {
   };
 
   const handleCategoryClick = (category: string) => {
-    const intent = pickRandomIntent();
+    const intent = pickRandomIntentForCategory(category);
     router.push(`/what-to-eat/${category}/${intent}`);
   };
 
   const handleIntentClick = (intent: string) => {
-    const category = pickRandomCategory();
+    const category = pickRandomCategoryForIntent(intent);
     router.push(`/what-to-eat/${category}/${intent}`);
   };
 
