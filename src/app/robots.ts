@@ -8,6 +8,9 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://what2pick.vercel.app/sitemap.xml",
+    sitemap: [
+      "https://what2pick.vercel.app/sitemap.xml",
+      "https://what2pick.vercel.app/site-map.xml",
+    ],
   };
 }
