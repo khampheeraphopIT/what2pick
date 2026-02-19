@@ -7,14 +7,6 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: [
-        "/random",
-        "/yes-or-no",
-        "/random-number",
-        "/random-color",
-        "/name-generator",
-        "/what-to-do",
-      ],
     },
     sitemap: "https://what2pick.vercel.app/sitemap.xml",
   };
