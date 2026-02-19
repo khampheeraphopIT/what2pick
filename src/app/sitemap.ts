@@ -2,19 +2,15 @@ import { MetadataRoute } from "next";
 
 export const dynamic = "force-static";
 
+export const revalidate = 3600; // Revalidate every hour
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://what2pick.vercel.app";
-  const lastMod = new Date().toISOString().split(".")[0] + "Z"; // Simplified ISO format (no ms)
+  const now = new Date();
 
   const routes: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/`,
-      lastModified: lastMod,
-    },
-    {
-      url: `${baseUrl}/what-to-eat`,
-      lastModified: lastMod,
-    },
+    { url: `${baseUrl}/`, lastModified: now },
+    { url: `${baseUrl}/what-to-eat`, lastModified: now },
   ];
 
   const categories = [
@@ -46,7 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   categories.forEach((category) => {
     routes.push({
       url: `${baseUrl}/what-to-eat/${category}`,
-      lastModified: lastMod,
+      lastModified: now,
     });
   });
 
@@ -86,7 +82,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   categoryIntentPairs.forEach(([category, intent]) => {
     routes.push({
       url: `${baseUrl}/what-to-eat/${category}/${intent}`,
-      lastModified: lastMod,
+      lastModified: now,
     });
   });
 
