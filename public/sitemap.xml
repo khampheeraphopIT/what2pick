@@ -165,4 +165,10 @@
   <url>
     <loc>https://what2pick.vercel.app/what-to-eat/cheap/for-students</loc>
   </url>
+  <url>
+    <loc>https://what2pick.vercel.app/coin-flip</loc>
+  </url>
+  <url>
+    <loc>https://what2pick.vercel.app/custom-list</loc>
+  </url>
 </urlset>

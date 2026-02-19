@@ -19,6 +19,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { HistoryProvider } from "@/context/HistoryContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,10 +30,12 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body className="antialiased">
-        <Navbar />
-        <main className="flex flex-col items-center justify-center min-h-[calc(100dvh-3.5rem)] px-4 py-8">
-          {children}
-        </main>
+        <HistoryProvider>
+          <Navbar />
+          <main className="flex flex-col items-center justify-center min-h-[calc(100dvh-3.5rem)] px-4 py-8">
+            {children}
+          </main>
+        </HistoryProvider>
       </body>
     </html>
   );

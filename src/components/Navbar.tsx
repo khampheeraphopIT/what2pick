@@ -8,6 +8,7 @@ const tools = [
   { href: "/", label: "Home" },
   { href: "/what-to-eat", label: "Decide food" },
   { href: "/yes-or-no", label: "Get an answer" },
+  { href: "/custom-list", label: "Custom list" },
   { href: "/random-number", label: "Pick a number" },
   { href: "/random-color", label: "Pick a color" },
   { href: "/name-generator", label: "Generate a name" },
