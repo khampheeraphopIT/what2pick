@@ -49,8 +49,20 @@ export default function IntentPicker({
 
       if (count >= maxCount) {
         clearInterval(interval);
-        const randomFood =
+
+        // --- Variety Guard: Try to pick something different from the previous result if available ---
+        let randomFood =
           filteredFoods[Math.floor(Math.random() * filteredFoods.length)];
+        if (
+          filteredFoods.length > 1 &&
+          result &&
+          randomFood.name === result.name
+        ) {
+          // Re-pick once to try and get variety
+          randomFood =
+            filteredFoods[Math.floor(Math.random() * filteredFoods.length)];
+        }
+
         setResult(randomFood);
         setIsRolling(false);
         setRollingFood(null);

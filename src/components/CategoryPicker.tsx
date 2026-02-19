@@ -46,8 +46,20 @@ export default function CategoryPicker({
 
       if (count >= maxCount) {
         clearInterval(interval);
-        const randomFood =
+
+        // --- Variety Guard: Try to pick something different from the previous result if available ---
+        let randomFood =
           categoryFoods[Math.floor(Math.random() * categoryFoods.length)];
+        if (
+          categoryFoods.length > 1 &&
+          result &&
+          randomFood.name === result.name
+        ) {
+          // Re-pick once to try and get variety
+          randomFood =
+            categoryFoods[Math.floor(Math.random() * categoryFoods.length)];
+        }
+
         setResult(randomFood);
         setIsRolling(false);
         setRollingFood(null);
