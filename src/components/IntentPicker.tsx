@@ -40,7 +40,7 @@ export default function IntentPicker({
 
     // Slot machine "rolling" effect
     let count = 0;
-    const maxCount = 10;
+    const maxCount = 25; // 25 * 100ms = 2.5 seconds
     const interval = setInterval(() => {
       setRollingFood(
         filteredFoods[Math.floor(Math.random() * filteredFoods.length)],
@@ -50,18 +50,20 @@ export default function IntentPicker({
       if (count >= maxCount) {
         clearInterval(interval);
 
-        // --- Variety Guard: Try to pick something different from the previous result if available ---
-        let randomFood =
-          filteredFoods[Math.floor(Math.random() * filteredFoods.length)];
-        if (
-          filteredFoods.length > 1 &&
-          result &&
-          randomFood.name === result.name
-        ) {
-          // Re-pick once to try and get variety
-          randomFood =
-            filteredFoods[Math.floor(Math.random() * filteredFoods.length)];
-        }
+        // --- Improved Variety Logic ---
+        // Pick 3 random candidates and choose the one that isn't the current result
+        const candidates = [
+          filteredFoods[Math.floor(Math.random() * filteredFoods.length)],
+          filteredFoods[Math.floor(Math.random() * filteredFoods.length)],
+          filteredFoods[Math.floor(Math.random() * filteredFoods.length)],
+        ];
+
+        // Filter out candidates that match current result if we have enough options
+        const uniqueCandidates = candidates.filter(
+          (c) => !result || c.name !== result.name,
+        );
+        const randomFood =
+          uniqueCandidates.length > 0 ? uniqueCandidates[0] : candidates[0];
 
         setResult(randomFood);
         setIsRolling(false);

@@ -37,7 +37,7 @@ export default function CategoryPicker({
 
     // Slot machine "rolling" effect
     let count = 0;
-    const maxCount = 10;
+    const maxCount = 25; // 2.5 seconds
     const interval = setInterval(() => {
       setRollingFood(
         categoryFoods[Math.floor(Math.random() * categoryFoods.length)],
@@ -47,18 +47,18 @@ export default function CategoryPicker({
       if (count >= maxCount) {
         clearInterval(interval);
 
-        // --- Variety Guard: Try to pick something different from the previous result if available ---
-        let randomFood =
-          categoryFoods[Math.floor(Math.random() * categoryFoods.length)];
-        if (
-          categoryFoods.length > 1 &&
-          result &&
-          randomFood.name === result.name
-        ) {
-          // Re-pick once to try and get variety
-          randomFood =
-            categoryFoods[Math.floor(Math.random() * categoryFoods.length)];
-        }
+        // --- Improved Variety Logic ---
+        const candidates = [
+          categoryFoods[Math.floor(Math.random() * categoryFoods.length)],
+          categoryFoods[Math.floor(Math.random() * categoryFoods.length)],
+          categoryFoods[Math.floor(Math.random() * categoryFoods.length)],
+        ];
+
+        const uniqueCandidates = candidates.filter(
+          (c) => !result || c.name !== result.name,
+        );
+        const randomFood =
+          uniqueCandidates.length > 0 ? uniqueCandidates[0] : candidates[0];
 
         setResult(randomFood);
         setIsRolling(false);
